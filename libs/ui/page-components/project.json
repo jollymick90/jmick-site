@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/ui/page-components/src",
+  "projectType": "library",
+  "tags": ["ui"],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/ui/page-components/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/ui/page-components"],
+      "options": {
+        "jestConfig": "libs/ui/page-components/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

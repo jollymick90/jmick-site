@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@jmick-site/model/page-component": [
+        "libs/model/page-component/src/index.ts"
+      ],
+      "@jmick-site/ui/page-components": ["libs/ui/page-components/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

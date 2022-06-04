@@ -3,6 +3,8 @@
   "version": 2,
   "projects": {
     "jmick-site": "apps/jmick-site",
-    "jmick-site-e2e": "apps/jmick-site-e2e"
+    "jmick-site-e2e": "apps/jmick-site-e2e",
+    "model-page-component": "libs/model/page-component",
+    "ui-page-components": "libs/ui/page-components"
   }
 }
