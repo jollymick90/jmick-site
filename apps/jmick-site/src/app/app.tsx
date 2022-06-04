@@ -1,8 +1,10 @@
-import { HeaderSection } from '@jmick-site/ui/page-components';
+import { Header, HeaderSection } from '@jmick-site/ui/page-components';
 import { NewspaperIcon, PhoneIcon, SupportIcon } from '@heroicons/react/outline'
 
 import './app.scss';
-import { HeaderSupportLink } from '@jmick-site/model/page-component';
+import { HeaderNavigationItem, HeaderSupportLink } from '@jmick-site/model/page-component';
+import { Routes, Route } from "react-router-dom";
+
 import back from '../assets/head-background.jpg'
 const backRef = 'https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&&sat=-100'
 const supportLinks: HeaderSupportLink[] = [
@@ -35,9 +37,16 @@ const supportLinks: HeaderSupportLink[] = [
     icon: NewspaperIcon,
   },
 ]
+const navigationList: HeaderNavigationItem[] = [
+  { name: 'Solutions', href: '#' },
+  { name: 'Pricing', href: '#' },
+  { name: 'Docs', href: '#' },
+  { name: 'Company', href: '#' },
+]
 export function App() {
   return (
     <div className="w-full h-full">
+      <Header navigationList={navigationList}/>
       <HeaderSection
         supportLinks={supportLinks}
         backgroundImg={back}

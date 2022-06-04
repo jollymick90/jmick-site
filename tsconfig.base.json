@@ -15,6 +15,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@jmick-site/feature/blog": ["libs/feature/blog/src/index.ts"],
+      "@jmick-site/feature/career": ["libs/feature/career/src/index.ts"],
+      "@jmick-site/feature/project": ["libs/feature/project/src/index.ts"],
+      "@jmick-site/feature/tech-skills": [
+        "libs/feature/tech-skills/src/index.ts"
+      ],
       "@jmick-site/model/page-component": [
         "libs/model/page-component/src/index.ts"
       ],

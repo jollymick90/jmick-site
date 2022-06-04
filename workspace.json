@@ -2,6 +2,10 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "feature-blog": "libs/feature/blog",
+    "feature-career": "libs/feature/career",
+    "feature-project": "libs/feature/project",
+    "feature-tech-skills": "libs/feature/tech-skills",
     "jmick-site": "apps/jmick-site",
     "jmick-site-e2e": "apps/jmick-site-e2e",
     "model-page-component": "libs/model/page-component",
