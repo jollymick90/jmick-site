@@ -18,7 +18,10 @@
       "@jmick-site/model/page-component": [
         "libs/model/page-component/src/index.ts"
       ],
-      "@jmick-site/ui/page-components": ["libs/ui/page-components/src/index.ts"]
+      "@jmick-site/ui/page-components": [
+        "libs/ui/page-components/src/index.ts"
+      ],
+      "@jmick-site/vanilla-js": ["libs/vanilla-js/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
