@@ -4,32 +4,40 @@ import { NewspaperIcon, PhoneIcon, SupportIcon } from '@heroicons/react/outline'
 import './app.scss';
 import { HeaderSupportLink } from '@jmick-site/model/page-component';
 import back from '../assets/head-background.jpg'
+const backRef = 'https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&&sat=-100'
 const supportLinks: HeaderSupportLink[] = [
   {
-    name: 'Careere',
+    name: 'Career',
     href: '#',
     description:
-      'Follow me in my path.',
+      'Where i come from',
     icon: PhoneIcon,
   },
   {
     name: 'Technical Skills',
     href: '#',
     description:
-      'java, javascript, kotlin, csharp, html, css, angular, react, vue, svelte, android, graphql',
+      'Who i am: java, javascript, kotlin, csharp, html, css, angular, react, vue, svelte, android, graphql',
     icon: SupportIcon,
   },
   {
     name: 'Blog',
     href: '#',
     description:
-      'What do you want to know?',
+      'What i think',
+    icon: NewspaperIcon,
+  },
+  {
+    name: 'Project',
+    href: '#',
+    description:
+      'What i do',
     icon: NewspaperIcon,
   },
 ]
 export function App() {
   return (
-    <div className="w-full">
+    <div className="w-full h-full">
       <HeaderSection
         supportLinks={supportLinks}
         backgroundImg={back}

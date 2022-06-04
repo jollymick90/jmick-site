@@ -11,7 +11,6 @@ export interface HeaderSectionProps {
     themeColor: string
 }
 
-
 export const HeaderSection: FC<HeaderSectionProps> = ({
     supportLinks, backgroundImg, title, subtitle, themeColor
 }) => {
@@ -19,7 +18,7 @@ export const HeaderSection: FC<HeaderSectionProps> = ({
     const classNameLink = `absolute top-0 p-5 inline-block bg-${themeColor}-600 rounded-xl shadow-lg transform -translate-y-1/2`;
     const classNameContact = classNames('text-base font-medium', `text-${themeColor}-700`, `hover:text-${themeColor}-600`);
     return (
-        <div className="bg-white">
+        <div className='bg-blue-200 h-full'>
             {/* Header */}
             <div className="relative pb-32 bg-gray-800">
                 <div className="absolute inset-0">
@@ -49,15 +48,11 @@ export const HeaderSection: FC<HeaderSectionProps> = ({
                 <h2 className="sr-only" id="contact-heading">
                     Contact us
                 </h2>
-                <div className="grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-8">
+                <div className="grid grid-cols-1 gap-y-20 md:grid-cols-2 md:gap-x-2 md:gap-y-16 lg:grid-cols-4 lg:gap-y-0 lg:gap-x-4">
                     {supportLinks.map((link) => (
                         <div key={link.name} className="flex flex-col bg-white rounded-2xl shadow-xl">
                             <div className="flex-1 relative pt-16 px-6 pb-8 md:px-8">
-                                <div
-                                    // className={classNames('absolute top-0 p-5 inline-block',`bg-${themeColor}-600`, "rounded-xl shadow-lg transform -translate-y-1/2")}
-                                    // className={`absolute top-0 p-5 inline-block bg-jm-600 rounded-xl shadow-lg transform -translate-y-1/2`}
-                                    className={classNameLink}
-                                >
+                                <div className={classNameLink}>
                                     <link.icon className="h-6 w-6 text-white" aria-hidden="true" />
                                 </div>
                                 <h3 className="text-xl font-medium text-gray-900">{link.name}</h3>
