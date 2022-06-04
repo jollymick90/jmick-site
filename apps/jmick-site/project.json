@@ -1,0 +1,83 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/jmick-site/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/jmick-site",
+        "index": "apps/jmick-site/src/index.html",
+        "baseHref": "/",
+        "main": "apps/jmick-site/src/main.tsx",
+        "polyfills": "apps/jmick-site/src/polyfills.ts",
+        "tsConfig": "apps/jmick-site/tsconfig.app.json",
+        "assets": [
+          "apps/jmick-site/src/favicon.ico",
+          "apps/jmick-site/src/assets"
+        ],
+        "styles": ["apps/jmick-site/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/jmick-site/src/environments/environment.ts",
+              "with": "apps/jmick-site/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "jmick-site:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "jmick-site:build:development"
+        },
+        "production": {
+          "buildTarget": "jmick-site:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/jmick-site/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/jmick-site"],
+      "options": {
+        "jestConfig": "apps/jmick-site/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
