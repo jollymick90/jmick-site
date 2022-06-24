@@ -1,11 +1,15 @@
 import { FC } from "react"
+import { Contact } from "./contact"
+import { MainSkills } from "./main-skills"
+import { Presentation } from "./presentation"
+import { Skills } from "./skills"
 
 
 export const Resume: FC<any> = () => {
-    return <div className="relative py-16 bg-white overflow-hidden">
+    return <div className="relative py-1 bg-white overflow-hidden">
         <div className="relative px-4 sm:px-6 lg:px-8">
             <div className="text-lg max-w-prose mx-auto">
-                <h1>
+                <h1 >
                     <span className="block text-base text-center text-jm-600 font-semibold tracking-wide uppercase">
                         Michele Scarpa
                     </span>
@@ -13,32 +17,13 @@ export const Resume: FC<any> = () => {
                         Software engineer
                     </span>
                 </h1>
-                <p className="text-center mt-8 text-xl text-gray-500 leading-8">
-                Javascript - Typescript - React - Vue - Angular - Android - Java - Dotnet.
-                </p>
-                <p className="text-center flex flex-col gap-1 justify-center mt-8 text-lg text-gray-500 leading-8">
-                    <span>
-                        scarpa.michele.90@gmail.com
-                    </span>
-                    <span>
-                        3483482541
-                    </span>
-                </p>
+                <MainSkills />
+                <Contact />
             </div>
-            <div className="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto">
-                <p>
-                    Dal 2015 sviluppo software, so essere versatile e in questi anni ho imparato a trovare soluzioni adatte al contesto e al cliente.<br/>Sono appassionato del settore IT e ricerco costantemente di migliorare le mie qualità tecniche e professionali, un ottimo jolly focalizzato su risultato e qualità
-                </p>
-                
-                <h4>Abilità tecniche</h4>
-                <p>
-                    Avanzate	Javascript, Typescript, HTML/CSS, Ract, AngularJS, AngularTS, VueJS, Android, Tizen OS,  JQuery, openlayers, git
+            <div className="mt-3 prose prose-indigo prose-lg text-gray-500 mx-auto">
+                <Presentation />
 
-                    Intermedie	Java, Kotlin, Framework7, Angular, SQL, Agile-Scrum-Kanban
-
-                    Base	NodeJS, Dotnet, Cordova
-
-                </p>
+                <Skills />
                 <h4>Caratteristiche Personali </h4>
                 <p>
 
