@@ -1,30 +1,25 @@
 import { Header, HeaderSection } from '@jmick-site/ui/page-components';
-import { NewspaperIcon, PhoneIcon, SupportIcon } from '@heroicons/react/outline'
+import { NewspaperIcon, SupportIcon } from '@heroicons/react/outline'
 
 import './app.scss';
 import { HeaderNavigationItem, HeaderSupportLink } from '@jmick-site/model/page-component';
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import back from '../assets/head-background.jpg'
-const backRef = 'https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&&sat=-100'
+import { ResumePage, RESUME_PATH } from '@jmick-site/feature/career';
+import { ContentSamplePage } from '../components/content-sample-page';
+export const BLOG_PATH = "/blog";
 const supportLinks: HeaderSupportLink[] = [
   {
-    name: 'Career',
-    href: '#',
-    description:
-      'Where i come from',
-    icon: PhoneIcon,
-  },
-  {
-    name: 'Technical Skills',
-    href: '#',
+    name: 'Resume',
+    href: `${RESUME_PATH}`,
     description:
       'Who i am: java, javascript, kotlin, csharp, html, css, angular, react, vue, svelte, android, graphql',
     icon: SupportIcon,
   },
   {
     name: 'Blog',
-    href: '#',
+    href: `${BLOG_PATH}`,
     description:
       'What i think',
     icon: NewspaperIcon,
@@ -38,22 +33,34 @@ const supportLinks: HeaderSupportLink[] = [
   },
 ]
 const navigationList: HeaderNavigationItem[] = [
-  { name: 'Solutions', href: '#' },
-  { name: 'Pricing', href: '#' },
-  { name: 'Docs', href: '#' },
-  { name: 'Company', href: '#' },
+  { name: 'Resume', href: `${RESUME_PATH}`, },
+  { name: 'Blog', href: `${BLOG_PATH}` },
+  { name: 'Project', href: '#' },
 ]
+
+const Home = () => {
+  return <HeaderSection
+    supportLinks={supportLinks}
+    backgroundImg={back}
+    title="Michele Scarpa"
+    subtitle='Fullstack developer, orientato al frontend'
+    themeColor='jm'
+  />
+}
 export function App() {
   return (
     <div className="w-full h-full">
-      <Header navigationList={navigationList}/>
-      <HeaderSection
-        supportLinks={supportLinks}
-        backgroundImg={back}
-        title="Michele Scarpa"
-        subtitle='Fullstack developer, orientato al frontend'
-        themeColor='jm'
-      />
+      <Header navigationList={navigationList} />
+      <main className="w-screen">
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path={`${RESUME_PATH}`} element={<ResumePage />} />
+            <Route path={`${BLOG_PATH}`} element={<ContentSamplePage />} />
+          </Routes>
+        </Router>
+      </main>
+
     </div>
   );
 }
