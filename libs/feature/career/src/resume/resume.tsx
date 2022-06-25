@@ -11,18 +11,6 @@ import { Studies } from "./studies"
 
 export const Resume: FC<any> = () => {
 
-    const other = <div>
-        <h4>Settori</h4>
-        <p>
-            Digital Signage – Content Management System (CMS).
-            Mobile Nativo e Cross platform - B2B e B2C.
-            Portali Mappe Web
-
-        </p>
-
-
-    </div>
-
     return <div className="relative py-1 bg-white overflow-hidden">
         <div className="relative px-4 sm:px-6 lg:px-8">
             <div className="text-lg max-w-prose mx-auto">

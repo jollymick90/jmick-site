@@ -1,4 +1,5 @@
-import { TsIcon } from "@jmick-site/ui/page-components";
+import { TsIcon, ReactIcon } from "@jmick-site/ui/page-components";
+const showIcon = false;
 const mainSkillList = [
     {
         name: "Typescript",
@@ -10,7 +11,7 @@ const mainSkillList = [
     },
     {
         name: "React",
-        icon: <TsIcon />
+        icon: <ReactIcon />
     },
     {
         name: "Angular",
@@ -29,7 +30,13 @@ const mainSkillList = [
 export const MainSkills = () => {
     return <div className="w-full mt-8 text-xl text-gray-500 leading-8">
         <div className="flex flex-row flex-wrap gap-2 justify-center">
-            {mainSkillList.map(skill => <span className="inline-flex"> <span>{skill.name} </span> {skill.icon && skill.icon}</span>)}
+            {mainSkillList.map(skill =>
+                <span className="inline-flex">
+                    <span>{skill.name} </span>
+                    {showIcon && <span>{skill.icon}</span>}
+                </span>
+            )
+            }
         </div>
     </div>
 }

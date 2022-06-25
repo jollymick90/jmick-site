@@ -1,8 +1,8 @@
-import { CertIcon } from "@jmick-site/ui/page-components";
+import { FlagIcon } from "@heroicons/react/solid";
 import { classNames } from "@jmick-site/vanilla-js";
 
 export const eventTypes = {
-    cert: { icon: CertIcon, bgColorClass: 'bg-green-400' },
+    cert: { icon: FlagIcon, bgColorClass: 'bg-green-400' },
 }
 export const certification = [
     {
